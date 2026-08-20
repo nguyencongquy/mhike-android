@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="32dp"
+    android:background="#FCFDF2"
+    tools:context=".HomeActivity">
+
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:src="@drawable/logo"
+        android:adjustViewBounds="true"
+        android:layout_marginBottom="24dp"
+        android:contentDescription="App Logo" />
+
+    <Button
+        android:id="@+id/btnHomeAdd"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:text="ADD NEW HIKE"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#FCFDF2"
+        android:backgroundTint="#4B5AE4"
+
+        android:fontFamily="@font/nectarine"
+
+        app:cornerRadius="25dp"
+        android:elevation="6dp"
+        android:layout_marginBottom="20dp"
+        android:stateListAnimator="@null"/>
+
+    <Button
+        android:id="@+id/btnHomeView"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:text="VIEW ALL HIKES"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#FCFDF2"
+        android:backgroundTint="#4B5AE4"
+
+        android:fontFamily="@font/nectarine"
+
+        app:cornerRadius="25dp"
+        android:elevation="6dp"
+        android:layout_marginBottom="20dp"
+        android:stateListAnimator="@null"/>
+
+    <Button
+        android:id="@+id/btnHomeAbout"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:text="ABOUT US"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#4B5AE4"
+
+        android:fontFamily="@font/nectarine"
+
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        app:strokeColor="#4B5AE4"
+        app:strokeWidth="2dp"
+        app:cornerRadius="25dp"/>
+
+</LinearLayout>

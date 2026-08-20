@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FCFDF2"
+    android:fitsSystemWindows="true"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Hike"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:textColor="#4B5AE4"
+            android:fontFamily="@font/nectarine"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="24dp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="Name of Hike"
+            app:boxStrokeColor="#4B5AE4"
+            app:hintTextColor="#4B5AE4"
+            android:textColorHint="#4B5AE4">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etHikeName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords"
+                android:textColor="#4B5AE4"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp"
+            android:gravity="center_vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:hint="Location / Address"
+                app:boxStrokeColor="#4B5AE4"
+                app:hintTextColor="#4B5AE4"
+                android:textColorHint="#4B5AE4">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etLocationName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPostalAddress"
+                    android:textColor="#4B5AE4"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageButton
+                android:id="@+id/btnAutoFind"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="8dp"
+                android:src="@android:drawable/ic_menu_search"
+                android:backgroundTint="#4B5AE4"
+                android:padding="12dp"
+                app:tint="#FFFFFF"
+                android:contentDescription="Auto Find" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp"
+            android:gravity="center_vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:hint="Coordinates (Auto-filled)"
+                app:boxStrokeColor="#4B5AE4"
+                app:hintTextColor="#4B5AE4"
+                android:textColorHint="#4B5AE4">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etCoordinates"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Lat: 0.0, Lon: 0.0"
+                    android:focusable="false"
+                    android:clickable="false"
+                    android:textColor="#757575"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/btnOpenMap"
+                android:layout_width="wrap_content"
+                android:layout_height="55dp"
+                android:layout_marginStart="8dp"
+                android:text="📍 MAP"
+                android:textStyle="bold"
+                android:textColor="#FCFDF2"
+                android:backgroundTint="#4B5AE4"
+                android:fontFamily="@font/nectarine"
+                app:cornerRadius="12dp"
+                android:layout_gravity="bottom"/>
+        </LinearLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardWeather"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:strokeColor="#4B5AE4"
+            app:strokeWidth="1dp"
+            app:cardBackgroundColor="#FCFDF2"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="12dp">
+
+                    <ImageView
+                        android:id="@+id/ivWeatherIcon"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@android:drawable/ic_menu_view"
+                        android:layout_marginEnd="16dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="bottom">
+                            <TextView
+                                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="🌡️ " android:textSize="24sp" android:textColor="#4B5AE4" android:fontFamily="@font/nectarine"/>
+                            <TextView
+                                android:id="@+id/tvTempNum"
+                                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="--" android:textSize="34sp" android:textStyle="bold" android:textColor="#4B5AE4" android:layout_marginBottom="-2dp"/>
+                            <TextView
+                                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="°C" android:textSize="24sp" android:textColor="#4B5AE4" android:fontFamily="@font/nectarine" android:layout_marginStart="4dp"/>
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tvCondition"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Loading..."
+                            android:textSize="16sp"
+                            android:textColor="#4B5AE4"
+                            android:fontFamily="@font/nectarine"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#4B5AE4"
+                    android:alpha="0.3"
+                    android:layout_marginBottom="12dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="💧 Humidity" android:textSize="16sp" android:textColor="#4B5AE4" android:fontFamily="@font/nectarine"/>
+                    <Space android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"/>
+                    <TextView
+                        android:id="@+id/tvHumidityNum"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="--" android:textSize="22sp" android:textStyle="bold" android:textColor="#4B5AE4"/>
+                    <TextView
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="%" android:textSize="16sp" android:textColor="#4B5AE4" android:fontFamily="@font/nectarine" android:layout_marginStart="2dp" android:layout_marginBottom="2dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="🌬️ Wind" android:textSize="16sp" android:textColor="#4B5AE4" android:fontFamily="@font/nectarine"/>
+                    <Space android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"/>
+                    <TextView
+                        android:id="@+id/tvWindNum"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="--" android:textSize="22sp" android:textStyle="bold" android:textColor="#4B5AE4"/>
+                    <TextView
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text=" km/h" android:textSize="16sp" android:textColor="#4B5AE4" android:fontFamily="@font/nectarine" android:layout_marginBottom="2dp"/>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tvSelectedDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="No Date Selected"
+                android:textSize="16sp"
+                android:textColor="#4B5AE4"/>
+
+            <Button
+                android:id="@+id/btnPickDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📅 PICK DATE"
+                android:textStyle="bold"
+                android:textColor="#4B5AE4"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                app:strokeColor="#4B5AE4"
+                app:strokeWidth="2dp"
+                android:fontFamily="@font/nectarine"
+                app:cornerRadius="12dp"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Parking Available?"
+            android:textColor="#4B5AE4"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"/>
+
+        <RadioGroup
+            android:id="@+id/rgParking"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/rbYes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yes"
+                android:textColor="#4B5AE4"/>
+            <RadioButton
+                android:id="@+id/rbNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No"
+                android:textColor="#4B5AE4"
+                android:checked="true"/>
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp"
+            android:baselineAligned="false">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:hint="Length (km)"
+                app:boxStrokeColor="#4B5AE4"
+                app:hintTextColor="#4B5AE4"
+                android:textColorHint="#4B5AE4">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etLength"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:textColor="#4B5AE4"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Space android:layout_width="12dp" android:layout_height="match_parent"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:hint="Difficulty"
+                app:boxStrokeColor="#4B5AE4"
+                app:hintTextColor="#4B5AE4"
+                android:textColorHint="#4B5AE4">
+                <AutoCompleteTextView
+                    android:id="@+id/actDifficulty"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    android:textColor="#4B5AE4"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="Description"
+            app:boxStrokeColor="#4B5AE4"
+            app:hintTextColor="#4B5AE4"
+            android:textColorHint="#4B5AE4">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:lines="3"
+                android:gravity="top|start"
+                android:textColor="#4B5AE4"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="Gear (Optional)"
+            app:boxStrokeColor="#4B5AE4"
+            app:hintTextColor="#4B5AE4"
+            android:textColorHint="#4B5AE4">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etGear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textColor="#4B5AE4"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="Trail Condition (Optional)"
+            app:boxStrokeColor="#4B5AE4"
+            app:hintTextColor="#4B5AE4"
+            android:textColorHint="#4B5AE4">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etTrailCondition"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textColor="#4B5AE4"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btnAddHike"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_marginTop="24dp"
+            android:text="SAVE HIKE"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#FCFDF2"
+            android:backgroundTint="#4B5AE4"
+            android:fontFamily="@font/nectarine"
+            app:cornerRadius="12dp"
+            android:elevation="8dp"
+            android:stateListAnimator="@null"/>
+
+        <Button
+            android:id="@+id/btnViewAllHikes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="24dp"
+            android:text="VIEW ALL HIKES"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:textColor="#4B5AE4"
+            android:fontFamily="@font/nectarine"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+</ScrollView>

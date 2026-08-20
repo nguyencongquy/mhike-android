@@ -1,0 +1,6 @@
+# Copy this file to local.properties and set your Android SDK path.
+sdk.dir=/absolute/path/to/Android/sdk
+
+# Optional. Weather cards remain disabled when this value is empty.
+# Restrict production keys to the Android application ID in OpenWeather.
+OPEN_WEATHER_API_KEY=

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FCFDF2">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Advanced Search"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#4B5AE4"
+            android:fontFamily="@font/nectarine"
+            android:gravity="center"
+            android:layout_marginBottom="24dp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="Hike Name"
+            app:boxStrokeColor="#4B5AE4"
+            app:hintTextColor="#4B5AE4"
+            android:textColorHint="#4B5AE4">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etSearchName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#4B5AE4"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="Location"
+            app:boxStrokeColor="#4B5AE4"
+            app:hintTextColor="#4B5AE4"
+            android:textColorHint="#4B5AE4">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etSearchLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#4B5AE4"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:hint="Date"
+                app:boxStrokeColor="#4B5AE4"
+                app:hintTextColor="#4B5AE4"
+                android:textColorHint="#4B5AE4">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etSearchDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="date"
+                    android:textColor="#4B5AE4"
+                    android:focusable="false"/> </com.google.android.material.textfield.TextInputLayout>
+
+            <Space android:layout_width="12dp" android:layout_height="match_parent"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:hint="Length"
+                app:boxStrokeColor="#4B5AE4"
+                app:hintTextColor="#4B5AE4"
+                android:textColorHint="#4B5AE4">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etSearchLength"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:textColor="#4B5AE4"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnResetSearch"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="24dp"
+            android:text="RESET FILTER"
+            android:textStyle="bold"
+            android:textColor="#4B5AE4"
+            android:fontFamily="@font/nectarine"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            app:strokeColor="#4B5AE4"
+            app:strokeWidth="2dp"
+            app:cornerRadius="12dp"/>
+
+        <Button
+            android:id="@+id/btnPerformSearch"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="12dp"
+            android:text="SEARCH NOW"
+            android:textStyle="bold"
+            android:textColor="#FCFDF2"
+            android:backgroundTint="#4B5AE4"
+            android:fontFamily="@font/nectarine"
+            app:cornerRadius="12dp"
+            android:elevation="6dp"/>
+
+    </LinearLayout>
+</ScrollView>

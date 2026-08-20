@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">M-Hike</string>
+    <string name="tracking_channel_name">Route tracking</string>
+    <string name="tracking_notification_title">M-Hike route tracking</string>
+    <string name="tracking_notification_text">Recording route points for active hike</string>
+
+    <string-array name="difficulty_levels">
+        <item>Easy</item>
+        <item>Medium</item>
+        <item>Hard</item>
+        <item>Very Hard</item>
+    </string-array>
+</resources>

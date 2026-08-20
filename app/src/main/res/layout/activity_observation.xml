@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FCFDF2"
+    android:fitsSystemWindows="true"
+    tools:context=".ObservationActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="24dp"
+        android:paddingTop="24dp"
+        android:paddingBottom="16dp">
+
+        <ImageButton
+            android:id="@+id/btnBackObs"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@android:drawable/ic_menu_revert"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:tint="#4B5AE4"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:id="@+id/tvHikeTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Observations"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:textColor="#4B5AE4"
+            android:fontFamily="@font/nectarine"
+            android:gravity="center"
+            android:layout_toEndOf="@id/btnBackObs"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvObservations"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingHorizontal="16dp"
+        android:clipToPadding="false"
+        android:layout_marginBottom="8dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp"
+        android:background="#FCFDF2">
+
+        <Button
+            android:id="@+id/btnAddObservation"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:text="ADD OBSERVATION"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#FCFDF2"
+            android:backgroundTint="#4B5AE4"
+            android:fontFamily="@font/nectarine"
+            app:cornerRadius="25dp"
+            android:elevation="8dp"
+            android:stateListAnimator="@null"/>
+    </LinearLayout>
+
+</LinearLayout>

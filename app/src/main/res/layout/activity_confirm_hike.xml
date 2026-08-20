@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FCFDF2"
+    android:fitsSystemWindows="true"
+    tools:context=".ConfirmHikeActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Confirm Details"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:textColor="#4B5AE4"
+            android:fontFamily="@font/nectarine"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="24dp"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            app:strokeColor="#4B5AE4"
+            app:strokeWidth="2dp"
+            app:cardBackgroundColor="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView android:id="@+id/tvConfirmName" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="18sp" android:textColor="#4B5AE4" android:textStyle="bold" android:layout_marginBottom="8dp" tools:text="Name: Example"/>
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E0E0E0" android:layout_marginBottom="8dp"/>
+
+                <TextView android:id="@+id/tvConfirmLocation" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="16sp" android:layout_marginBottom="8dp" tools:text="Location: Sapa"/>
+                <TextView android:id="@+id/tvConfirmDate" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="16sp" android:layout_marginBottom="8dp" tools:text="Date: 12/12/2023"/>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="8dp">
+                    <TextView android:id="@+id/tvConfirmParking" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:textSize="16sp" tools:text="Parking: Yes"/>
+                    <TextView android:id="@+id/tvConfirmLength" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:textSize="16sp" tools:text="Length: 10km"/>
+                </LinearLayout>
+
+                <TextView android:id="@+id/tvConfirmDifficulty" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="16sp" android:layout_marginBottom="8dp" tools:text="Difficulty: Medium"/>
+
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E0E0E0" android:layout_marginBottom="8dp"/>
+
+                <TextView android:id="@+id/tvConfirmDescription" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="16sp" android:layout_marginBottom="8dp" android:textStyle="italic" tools:text="Desc: ..."/>
+                <TextView android:id="@+id/tvConfirmGear" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="16sp" android:layout_marginBottom="8dp" tools:text="Gear: ..."/>
+                <TextView android:id="@+id/tvConfirmTrail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="16sp" tools:text="Trail: ..."/>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnEdit"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:text="GO BACK"
+                android:textStyle="bold"
+                android:textColor="#4B5AE4"
+                android:fontFamily="@font/nectarine"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                app:strokeColor="#4B5AE4"
+                app:strokeWidth="2dp"
+                app:cornerRadius="12dp"
+                android:layout_marginEnd="12dp" />
+
+            <Button
+                android:id="@+id/btnConfirm"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:text="SUBMIT"
+                android:textStyle="bold"
+                android:textColor="#FCFDF2"
+                android:backgroundTint="#4B5AE4"
+                android:fontFamily="@font/nectarine"
+                app:cornerRadius="12dp"
+                android:elevation="6dp"
+                android:stateListAnimator="@null"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
